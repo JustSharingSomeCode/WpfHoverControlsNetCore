@@ -193,6 +193,7 @@
                                 Background="{TemplateBinding ButtonBrush}"
                                 BackgroundHover="{TemplateBinding ButtonHoverBrush}"
                                 Foreground="{TemplateBinding IconBrush}"
+                                ForegroundHover="{TemplateBinding IconHoverBrush}"
                                 BorderThickness="0"/>
                             <local:HoverTextBox 
                                 x:Name="ValueTxt"
@@ -219,6 +220,7 @@
                                 Background="{TemplateBinding ButtonBrush}"
                                 BackgroundHover="{TemplateBinding ButtonHoverBrush}"
                                 Foreground="{TemplateBinding IconBrush}"
+                                ForegroundHover="{TemplateBinding IconHoverBrush}"
                                 BorderThickness="0"/>
                         </Grid>
                     </Border>

@@ -150,6 +150,18 @@ namespace WpfHoverControls
             DependencyProperty.Register("IconBrush", typeof(Brush), typeof(HoverFloatAdder), new PropertyMetadata(Brushes.White));
 
         [Category("Hover Float Adder")]
+        public Brush IconHoverBrush
+        {
+            get { return (Brush)GetValue(IconHoverBrushProperty); }
+            set { SetValue(IconHoverBrushProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IconHoverBrush.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IconHoverBrushProperty =
+            DependencyProperty.Register("IconHoverBrush", typeof(Brush), typeof(HoverFloatAdder), new PropertyMetadata(Brushes.White));
+
+
+        [Category("Hover Float Adder")]
         public new Brush Foreground
         {
             get { return (Brush)GetValue(ForegroundProperty); }
