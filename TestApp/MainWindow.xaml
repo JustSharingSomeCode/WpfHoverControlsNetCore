@@ -1,0 +1,22 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApp"
+        xmlns:WpfHoverControls="clr-namespace:WpfHoverControls;assembly=WpfHoverControls" x:Class="TestApp.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <WpfHoverControls:HoverButton Content="HoverButton" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="397" Height="51" IconFontSize="20"/>
+        <WpfHoverControls:HoverButton Content="&#xE188;" HorizontalAlignment="Left" Margin="412,11,0,0" VerticalAlignment="Top" Width="50" Height="50" TextFont="Segoe MDL2 Assets" TextFontSize="20" CornerRadius="25" ShowIcon="False" IconForegroundHover="#FFFFD100" Background="#FFE2E2E2" BackgroundHover="#FFE2E2E2" BorderThickness="0" ForegroundHover="#FFFFDC00" Foreground="#FFB9B9B9"/>
+        <WpfHoverControls:HoverScrollBar Margin="772,10,0,10" ThumbBrush="Black" ViewportSize="50" Maximum="255" Minimum="0" Orientation="Vertical" HorizontalAlignment="Left" Width="5"/>
+        <WpfHoverControls:HoverTextBox HorizontalAlignment="Left" Height="30" Margin="10,66,0,0" TextWrapping="Wrap" Text="HoverTextBox" VerticalAlignment="Top" Width="397" CornerRadius="0" BorderThickness="0,0,0,2" Background="#FFE2E2E2" BackgroundHover="#FFE2E2E2" BorderBrushHover="Blue" Padding="5" Foreground="Black" VerticalContentAlignment="Bottom"/>
+        <WpfHoverControls:HoverScrollViewer HorizontalAlignment="Left" Height="147" Margin="10,101,0,0" VerticalAlignment="Top" Width="397" Background="Black" HorizontalScrollBarVisibility="Auto" CornerRadius="5" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+            <Grid Height="276" Width="522">
+                <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+        </WpfHoverControls:HoverScrollViewer>
+
+    </Grid>
+</Window>

@@ -1,0 +1,168 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WpfHoverControls">
+
+    <Style TargetType="{x:Type local:HoverButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HoverButton}">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}">
+                        <Grid Name="grid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   x:Name="IconLbl"
+                                   Padding="0"
+                                   FontFamily="{TemplateBinding IconFont}"
+                                   FontSize="{TemplateBinding IconFontSize}" 
+                                   VerticalContentAlignment="Center" 
+                                   HorizontalContentAlignment="Center"
+                                   Foreground="{TemplateBinding IconForeground}"
+                                   Content="{TemplateBinding IconText}"/>
+                            <ContentPresenter x:Name="content"
+                                              Grid.Column="1"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              TextBlock.FontFamily="{TemplateBinding TextFont}"
+                                              TextBlock.Foreground="{TemplateBinding Foreground}"
+                                              TextBlock.FontSize="{TemplateBinding TextFontSize}"
+                                              Content="{TemplateBinding Content}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ShowIcon" Value="True">
+                            <Setter TargetName="IconLbl" Property="Width" Value="{Binding ElementName=grid, Path=ActualHeight}"/>
+                            <Setter TargetName="IconLbl" Property="Height" Value="{Binding ElementName=grid, Path=ActualHeight}"/>
+                        </Trigger>
+                        <Trigger Property="ShowIcon" Value="False">
+                            <Setter TargetName="IconLbl" Property="Width" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackgroundHover}"/>
+                            <Setter TargetName="IconLbl" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconForegroundHover}"/>
+                            <Setter TargetName="content" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ForegroundHover}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:HoverScrollBar}">
+        <Setter Property="MinWidth" Value="10"/>
+        <Setter Property="MinHeight" Value="10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HoverScrollBar}">
+                    <Border Background="{TemplateBinding Property=Background}" CornerRadius="{TemplateBinding CornerRadius}" MinWidth="{TemplateBinding MinWidth}" MinHeight="{TemplateBinding MinHeight}">
+                        <Track x:Name="PART_Track">
+                            <Track.Thumb>
+                                <Thumb Background="{TemplateBinding ThumbBrush}">
+                                    <Thumb.Style>
+                                        <Style TargetType="{x:Type Thumb}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverScrollBar}}}"/>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="border" Property="Background" Value="{Binding ThumbBrushHover, RelativeSource={RelativeSource AncestorType={x:Type local:HoverScrollBar}}}"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Thumb.Style>
+                                </Thumb>
+                            </Track.Thumb>
+                        </Track>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter TargetName="PART_Track" Property="IsDirectionReversed" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="Orientation" Value="Horizontal">
+                            <Setter TargetName="PART_Track" Property="IsDirectionReversed" Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:HoverTextBox}">
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HoverTextBox}">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}">
+                        <Grid>
+                            <ScrollViewer x:Name="PART_ContentHost" VerticalScrollBarVisibility="Auto"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackgroundHover}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrushHover}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:HoverScrollViewer}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HoverScrollViewer}">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+                        <Grid ClipToBounds="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ScrollContentPresenter x:Name="ContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" ClipToBounds="True" Margin="{TemplateBinding ContentMargin}"/>
+                            <local:HoverScrollBar x:Name="PART_VerticalScrollBar"
+                                                  Grid.Column="1"
+                                                  Value="{TemplateBinding VerticalOffset}"
+                                                  Maximum="{TemplateBinding ScrollableHeight}"
+                                                  ViewportSize="{TemplateBinding ViewportHeight}"
+                                                  Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                                  CornerRadius="{TemplateBinding CornerRadius}"
+                                                  Background="{TemplateBinding ScrollBarBackground}"
+                                                  ThumbBrush="{TemplateBinding ThumbBrush}"/>
+                            <local:HoverScrollBar x:Name="PART_HorizontalScrollBar"
+                                                  Orientation="Horizontal"
+                                                  Grid.Row="1"                     
+                                                  Value="{TemplateBinding HorizontalOffset}"
+                                                  Maximum="{TemplateBinding ScrollableWidth}"
+                                                  ViewportSize="{TemplateBinding ViewportWidth}"
+                                                  Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                                  CornerRadius="{TemplateBinding CornerRadius}"
+                                                  Background="{TemplateBinding ScrollBarBackground}"
+                                                  ThumbBrush="{TemplateBinding ThumbBrush}"/>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
