@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:WpfHoverControls">
 
+    <local:FloatToStringConverter x:Key="FloatToString"/>
+
     <Style TargetType="{x:Type local:HoverButton}">
         <Setter Property="Template">
             <Setter.Value>
@@ -180,18 +182,20 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <local:HoverButton 
+                                x:Name="DecreaseBtn"
                                 Grid.Column="0" 
                                 Width="{Binding ElementName=grid, Path=ActualHeight}" 
                                 Height="{Binding ElementName=grid, Path=ActualHeight}"
                                 ShowIcon="False"
                                 TextFont="Segoe MDL2 Assets"
-                                Content="&#xE010;"
+                                Content="&#xE011;"
                                 CornerRadius="{TemplateBinding LeftButtonCornerRadius}"
                                 Background="{TemplateBinding ButtonBrush}"
                                 BackgroundHover="{TemplateBinding ButtonHoverBrush}"
                                 Foreground="{TemplateBinding IconBrush}"
                                 BorderThickness="0"/>
                             <local:HoverTextBox 
+                                x:Name="ValueTxt"
                                 Grid.Column="1"
                                 HorizontalAlignment="Stretch" 
                                 VerticalAlignment="Stretch"
@@ -200,16 +204,17 @@
                                 BackgroundHover="{TemplateBinding TextBoxHoverBrush}"
                                 Foreground="{TemplateBinding Foreground}"
                                 BorderThickness="0"
-                                Text="0"
+                                Text="{TemplateBinding Value, Converter={StaticResource FloatToString}}"
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center"/>
                             <local:HoverButton 
+                                x:Name="IncreaseBtn"
                                 Grid.Column="2" 
                                 Width="{Binding ElementName=grid, Path=ActualHeight}" 
                                 Height="{Binding ElementName=grid, Path=ActualHeight}"
                                 ShowIcon="False"
                                 TextFont="Segoe MDL2 Assets"
-                                Content="&#xE011;"
+                                Content="&#xE010;"
                                 CornerRadius="{TemplateBinding RightButtonCornerRadius}"
                                 Background="{TemplateBinding ButtonBrush}"
                                 BackgroundHover="{TemplateBinding ButtonHoverBrush}"
