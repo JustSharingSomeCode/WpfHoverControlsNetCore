@@ -189,6 +189,7 @@
                                 CornerRadius="{TemplateBinding LeftButtonCornerRadius}"
                                 Background="{TemplateBinding ButtonBrush}"
                                 BackgroundHover="{TemplateBinding ButtonHoverBrush}"
+                                Foreground="{TemplateBinding IconBrush}"
                                 BorderThickness="0"/>
                             <local:HoverTextBox 
                                 Grid.Column="1"
@@ -197,7 +198,11 @@
                                 CornerRadius="{TemplateBinding TextBoxCornerRadius}"
                                 Background="{TemplateBinding TextBoxBrush}"
                                 BackgroundHover="{TemplateBinding TextBoxHoverBrush}"
-                                BorderThickness="0"/>
+                                Foreground="{TemplateBinding Foreground}"
+                                BorderThickness="0"
+                                Text="0"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"/>
                             <local:HoverButton 
                                 Grid.Column="2" 
                                 Width="{Binding ElementName=grid, Path=ActualHeight}" 
@@ -208,6 +213,7 @@
                                 CornerRadius="{TemplateBinding RightButtonCornerRadius}"
                                 Background="{TemplateBinding ButtonBrush}"
                                 BackgroundHover="{TemplateBinding ButtonHoverBrush}"
+                                Foreground="{TemplateBinding IconBrush}"
                                 BorderThickness="0"/>
                         </Grid>
                     </Border>

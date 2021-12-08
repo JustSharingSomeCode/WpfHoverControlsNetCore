@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +54,8 @@ namespace WpfHoverControls
 
 
         #region CornerRadius
-
+        
+        [Category("Hover Float Adder")]
         public CornerRadius LeftButtonCornerRadius
         {
             get { return (CornerRadius)GetValue(LeftButtonCornerRadiusProperty); }
@@ -64,7 +66,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty LeftButtonCornerRadiusProperty =
             DependencyProperty.Register("LeftButtonCornerRadius", typeof(CornerRadius), typeof(HoverFloatAdder), new PropertyMetadata(new CornerRadius(5, 0, 0, 5)));
 
-
+        [Category("Hover Float Adder")]
         public CornerRadius RightButtonCornerRadius
         {
             get { return (CornerRadius)GetValue(RightButtonCornerRadiusProperty); }
@@ -75,7 +77,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty RightButtonCornerRadiusProperty =
             DependencyProperty.Register("RightButtonCornerRadius", typeof(CornerRadius), typeof(HoverFloatAdder), new PropertyMetadata(new CornerRadius(0, 5, 5, 0)));
 
-
+        [Category("Hover Float Adder")]
         public CornerRadius TextBoxCornerRadius
         {
             get { return (CornerRadius)GetValue(TextBoxCornerRadiusProperty); }
@@ -90,7 +92,7 @@ namespace WpfHoverControls
 
         #region Brushes
 
-
+        [Category("Hover Float Adder")]
         public Brush ButtonBrush
         {
             get { return (Brush)GetValue(ButtonBrushProperty); }
@@ -101,7 +103,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty ButtonBrushProperty =
             DependencyProperty.Register("ButtonBrush", typeof(Brush), typeof(HoverFloatAdder), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(80, 80, 80))));
 
-
+        [Category("Hover Float Adder")]
         public Brush ButtonHoverBrush
         {
             get { return (Brush)GetValue(ButtonHoverBrushProperty); }
@@ -112,7 +114,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty ButtonHoverBrushProperty =
             DependencyProperty.Register("ButtonHoverBrush", typeof(Brush), typeof(HoverFloatAdder), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(100, 100, 100))));
 
-
+        [Category("Hover Float Adder")]
         public Brush TextBoxBrush
         {
             get { return (Brush)GetValue(TextBoxBrushProperty); }
@@ -123,7 +125,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty TextBoxBrushProperty =
             DependencyProperty.Register("TextBoxBrush", typeof(Brush), typeof(HoverFloatAdder), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(60, 60, 60))));
 
-
+        [Category("Hover Float Adder")]
         public Brush TextBoxHoverBrush
         {
             get { return (Brush)GetValue(TextBoxHoverBrushProperty); }
@@ -134,11 +136,74 @@ namespace WpfHoverControls
         public static readonly DependencyProperty TextBoxHoverBrushProperty =
             DependencyProperty.Register("TextBoxHoverBrush", typeof(Brush), typeof(HoverFloatAdder), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(70, 70, 70))));
 
+        [Category("Hover Float Adder")]
+        public Brush IconBrush
+        {
+            get { return (Brush)GetValue(IconBrushProperty); }
+            set { SetValue(IconBrushProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IconBrush.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IconBrushProperty =
+            DependencyProperty.Register("IconBrush", typeof(Brush), typeof(HoverFloatAdder), new PropertyMetadata(Brushes.White));
+
+        [Category("Hover Float Adder")]
+        public new Brush Foreground
+        {
+            get { return (Brush)GetValue(ForegroundProperty); }
+            set { SetValue(ForegroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Foreground.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty ForegroundProperty =
+            DependencyProperty.Register("Foreground", typeof(Brush), typeof(HoverFloatAdder), new PropertyMetadata(Brushes.White));
+
+        #endregion       
+
+
+        public float Value
+        {
+            get { return (float)GetValue(ValueProperty); }
+            set { SetValue(ValueProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Value.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ValueProperty =
+            DependencyProperty.Register("Value", typeof(float), typeof(HoverFloatAdder), new FrameworkPropertyMetadata((float)0, null, CoerceCurrentReading));
+
+        private static object CoerceCurrentReading(DependencyObject depObj, object value)
+        {
+            HoverFloatAdder adder = (HoverFloatAdder)depObj;
+            float v = (float)value;
+            v = v > adder.MaxValue ? adder.MaxValue : v < adder.MinValue ? adder.MinValue : v;
+            return v;
+        }
 
 
 
+        public float MinValue
+        {
+            get { return (float)GetValue(MinValueProperty); }
+            set { SetValue(MinValueProperty, value); }
+        }
 
-        #endregion
+        // Using a DependencyProperty as the backing store for MinValue.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MinValueProperty =
+            DependencyProperty.Register("MinValue", typeof(float), typeof(HoverFloatAdder), new PropertyMetadata((float)0));
+
+
+        public float MaxValue
+        {
+            get { return (float)GetValue(MaxValueProperty); }
+            set { SetValue(MaxValueProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MaxValue.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MaxValueProperty =
+            DependencyProperty.Register("MaxValue", typeof(float), typeof(HoverFloatAdder), new PropertyMetadata((float)255));
+
+
+
 
     }
 }
