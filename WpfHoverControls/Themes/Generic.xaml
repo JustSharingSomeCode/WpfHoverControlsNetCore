@@ -165,4 +165,54 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type local:HoverFloatAdder}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HoverFloatAdder}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid x:Name="grid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <local:HoverButton 
+                                Grid.Column="0" 
+                                Width="{Binding ElementName=grid, Path=ActualHeight}" 
+                                Height="{Binding ElementName=grid, Path=ActualHeight}"
+                                ShowIcon="False"
+                                TextFont="Segoe MDL2 Assets"
+                                Content="&#xE010;"
+                                CornerRadius="{TemplateBinding LeftButtonCornerRadius}"
+                                Background="{TemplateBinding ButtonBrush}"
+                                BackgroundHover="{TemplateBinding ButtonHoverBrush}"
+                                BorderThickness="0"/>
+                            <local:HoverTextBox 
+                                Grid.Column="1"
+                                HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Stretch"
+                                CornerRadius="{TemplateBinding TextBoxCornerRadius}"
+                                Background="{TemplateBinding TextBoxBrush}"
+                                BackgroundHover="{TemplateBinding TextBoxHoverBrush}"
+                                BorderThickness="0"/>
+                            <local:HoverButton 
+                                Grid.Column="2" 
+                                Width="{Binding ElementName=grid, Path=ActualHeight}" 
+                                Height="{Binding ElementName=grid, Path=ActualHeight}"
+                                ShowIcon="False"
+                                TextFont="Segoe MDL2 Assets"
+                                Content="&#xE011;"
+                                CornerRadius="{TemplateBinding RightButtonCornerRadius}"
+                                Background="{TemplateBinding ButtonBrush}"
+                                BackgroundHover="{TemplateBinding ButtonHoverBrush}"
+                                BorderThickness="0"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

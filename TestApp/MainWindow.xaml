@@ -17,6 +17,7 @@
                 <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
             </Grid>
         </WpfHoverControls:HoverScrollViewer>
+        <WpfHoverControls:HoverFloatAdder HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Height="30" Width="397"/>
 
     </Grid>
 </Window>

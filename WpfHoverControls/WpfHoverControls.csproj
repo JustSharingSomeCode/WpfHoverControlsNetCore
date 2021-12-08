@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HoverButton.cs" />
+    <Compile Include="HoverFloatAdder.cs" />
     <Compile Include="HoverScrollBar.cs" />
     <Compile Include="HoverScrollViewer.cs" />
     <Compile Include="HoverTextBox.cs" />
