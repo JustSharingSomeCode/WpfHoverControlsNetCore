@@ -24,5 +24,10 @@ namespace TestApp
         {
             InitializeComponent();
         }
+
+        private void HoverFloatAdder_OnValueChanged(object sender, EventArgs e)
+        {
+            ValueChangedLbl.Content = FloatAdder.Value;
+        }
     }
 }

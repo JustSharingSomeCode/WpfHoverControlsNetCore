@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:WpfHoverControls">
 
+    <local:FloatToStringConverter x:Key="FloatToString"/>
+
     <Style TargetType="{x:Type local:HoverButton}">
         <Setter Property="Template">
             <Setter.Value>
@@ -161,6 +163,94 @@
 
                         </Grid>
                     </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:HoverFloatAdder}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HoverFloatAdder}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid x:Name="grid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <local:HoverButton 
+                                x:Name="DecreaseBtn"
+                                Grid.Column="0" 
+                                Width="{Binding ElementName=grid, Path=ActualHeight}" 
+                                Height="{Binding ElementName=grid, Path=ActualHeight}"
+                                ShowIcon="False"
+                                TextFont="Segoe MDL2 Assets"
+                                Content="&#xE011;"
+                                CornerRadius="{TemplateBinding LeftButtonCornerRadius}"
+                                Background="{TemplateBinding ButtonBrush}"
+                                BackgroundHover="{TemplateBinding ButtonHoverBrush}"
+                                Foreground="{TemplateBinding IconBrush}"
+                                ForegroundHover="{TemplateBinding IconHoverBrush}"
+                                BorderThickness="0"/>
+                            <local:HoverTextBox 
+                                x:Name="ValueTxt"
+                                Grid.Column="1"
+                                HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Stretch"
+                                CornerRadius="{TemplateBinding TextBoxCornerRadius}"
+                                Background="{TemplateBinding TextBoxBrush}"
+                                BackgroundHover="{TemplateBinding TextBoxHoverBrush}"
+                                Foreground="{TemplateBinding Foreground}"
+                                BorderThickness="0"
+                                Text="{TemplateBinding Value, Converter={StaticResource FloatToString}}"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"/>
+                            <local:HoverButton 
+                                x:Name="IncreaseBtn"
+                                Grid.Column="2" 
+                                Width="{Binding ElementName=grid, Path=ActualHeight}" 
+                                Height="{Binding ElementName=grid, Path=ActualHeight}"
+                                ShowIcon="False"
+                                TextFont="Segoe MDL2 Assets"
+                                Content="&#xE010;"
+                                CornerRadius="{TemplateBinding RightButtonCornerRadius}"
+                                Background="{TemplateBinding ButtonBrush}"
+                                BackgroundHover="{TemplateBinding ButtonHoverBrush}"
+                                Foreground="{TemplateBinding IconBrush}"
+                                ForegroundHover="{TemplateBinding IconHoverBrush}"
+                                BorderThickness="0"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:HoverToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HoverToggleButton}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <local:HoverButton Background="{TemplateBinding EnabledBrushColor}" BackgroundHover="{TemplateBinding EnabledBrushColorHover}" x:Name="OnBtn" Grid.Column="0" ShowIcon="False" Content="On" CornerRadius="5,0,0,5" BorderThickness="0"/>
+                        <local:HoverButton Background="{TemplateBinding DisabledBrushColor}" BackgroundHover="{TemplateBinding DisabledBrushColorHover}" x:Name="OffBtn" Grid.Column="1" ShowIcon="False" Content="Off" CornerRadius="0,5,5,0" BorderThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Value" Value="True">
+                            <Setter TargetName="OnBtn" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=EnabledBrushColor}"/>
+                            <Setter TargetName="OffBtn" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DisabledBrushColor}"/>
+                        </Trigger>
+                        <Trigger Property="Value" Value="False">
+                            <Setter TargetName="OnBtn" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=DisabledBrushColor}"/>
+                            <Setter TargetName="OffBtn" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=EnabledBrushColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

@@ -54,10 +54,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FloatToStringConverter.cs" />
     <Compile Include="HoverButton.cs" />
+    <Compile Include="HoverFloatAdder.cs" />
     <Compile Include="HoverScrollBar.cs" />
     <Compile Include="HoverScrollViewer.cs" />
     <Compile Include="HoverTextBox.cs" />
+    <Compile Include="HoverToggleButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
