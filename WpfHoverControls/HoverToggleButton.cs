@@ -64,6 +64,17 @@ namespace WpfHoverControls
             DependencyProperty.Register("EnabledBrushColor", typeof(Brush), typeof(HoverToggleButton), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
 
         [Category("Hover Toggle Button")]
+        public Brush EnabledBrushColorHover
+        {
+            get { return (Brush)GetValue(EnabledBrushColorHoverProperty); }
+            set { SetValue(EnabledBrushColorHoverProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for EnabledBrushColorHover.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty EnabledBrushColorHoverProperty =
+            DependencyProperty.Register("EnabledBrushColorHover", typeof(Brush), typeof(HoverToggleButton), new PropertyMetadata(new SolidColorBrush(Colors.DarkGray)));
+
+        [Category("Hover Toggle Button")]
         public Brush DisabledBrushColor
         {
             get { return (Brush)GetValue(DisabledBrushColorProperty); }
@@ -73,6 +84,19 @@ namespace WpfHoverControls
         // Using a DependencyProperty as the backing store for DisabledBrushColor.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DisabledBrushColorProperty =
             DependencyProperty.Register("DisabledBrushColor", typeof(Brush), typeof(HoverToggleButton), new PropertyMetadata(new SolidColorBrush(Colors.Gray)));
+
+        [Category("Hover Toggle Button")]
+        public Brush DisabledBrushColorHover
+        {
+            get { return (Brush)GetValue(DisabledBrushColorHoverProperty); }
+            set { SetValue(DisabledBrushColorHoverProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DisabledBrushColorHover.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DisabledBrushColorHoverProperty =
+            DependencyProperty.Register("DisabledBrushColorHover", typeof(Brush), typeof(HoverToggleButton), new PropertyMetadata(new SolidColorBrush(Colors.DarkGray)));
+
+
 
         [Category("Hover Toggle Button")]
         public new Brush Foreground
