@@ -19,6 +19,7 @@
         </WpfHoverControls:HoverScrollViewer>
         <WpfHoverControls:HoverFloatAdder x:Name="FloatAdder" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Height="30" Width="397" Value="50" OnValueChanged="HoverFloatAdder_OnValueChanged"/>
         <Label x:Name="ValueChangedLbl" Content="Label" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top"/>
+        <WpfHoverControls:HoverToggleButton Margin="443,182,244,203" EnabledBrushColor="#FF515151" DisabledBrushColor="#FFB8B8B8"/>
 
     </Grid>
 </Window>

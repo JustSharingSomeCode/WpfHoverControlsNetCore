@@ -228,8 +228,6 @@ namespace WpfHoverControls
 
         public override void OnApplyTemplate()
         {
-            base.OnApplyTemplate();
-
             HoverButton left = GetTemplateChild("DecreaseBtn") as HoverButton;
             HoverButton right = GetTemplateChild("IncreaseBtn") as HoverButton;
             HoverTextBox text = GetTemplateChild("ValueTxt") as HoverTextBox;
@@ -248,6 +246,8 @@ namespace WpfHoverControls
             {
                 text.KeyUp += Text_KeyUp;
             }
+
+            base.OnApplyTemplate();
         }
 
         private void Text_KeyUp(object sender, KeyEventArgs e)

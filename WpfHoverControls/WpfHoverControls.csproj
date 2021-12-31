@@ -60,6 +60,7 @@
     <Compile Include="HoverScrollBar.cs" />
     <Compile Include="HoverScrollViewer.cs" />
     <Compile Include="HoverTextBox.cs" />
+    <Compile Include="HoverToggleButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
