@@ -17,7 +17,7 @@
                 <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
             </Grid>
         </WpfHoverControls:HoverScrollViewer>
-        <WpfHoverControls:HoverFloatAdder x:Name="FloatAdder" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Height="30" Width="397" Value="50" OnValueChanged="HoverFloatAdder_OnValueChanged"/>
+        <WpfHoverControls:HoverFloatAdder x:Name="FloatAdder" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Height="30" Width="397" Value="50" OnValueChanged="HoverFloatAdder_OnValueChanged" Increase="0.5"/>
         <Label x:Name="ValueChangedLbl" Content="Label" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top"/>
         <WpfHoverControls:HoverToggleButton Margin="443,182,244,203" EnabledBrushColor="#FF515151" DisabledBrushColor="#FFB8B8B8" DisabledBrushColorHover="#FFE61A1A"/>
 

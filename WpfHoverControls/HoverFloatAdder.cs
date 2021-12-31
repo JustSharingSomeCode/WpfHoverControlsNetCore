@@ -216,14 +216,25 @@ namespace WpfHoverControls
         public static readonly DependencyProperty MaxValueProperty =
             DependencyProperty.Register("MaxValue", typeof(float), typeof(HoverFloatAdder), new PropertyMetadata((float)255));
 
+        [Category("Hover Float Adder")]
+        public float Increase
+        {
+            get { return (float)GetValue(IncreaseProperty); }
+            set { SetValue(IncreaseProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Increase.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IncreaseProperty =
+            DependencyProperty.Register("Increase", typeof(float), typeof(HoverFloatAdder), new PropertyMetadata((float)1.0f));
+
         private void DecreaseBtn_Click(object sender, RoutedEventArgs e)
         {
-            Value--;
+            Value -= Increase;
         }
 
         private void IncreaseBtn_Click(object sender, RoutedEventArgs e)
         {
-            Value++;
+            Value += Increase;
         }
 
         public override void OnApplyTemplate()
