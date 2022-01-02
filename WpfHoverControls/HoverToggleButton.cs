@@ -52,6 +52,8 @@ namespace WpfHoverControls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HoverToggleButton), new FrameworkPropertyMetadata(typeof(HoverToggleButton)));
         }
 
+        public event EventHandler OnValueChanged;
+
         [Category("Hover Toggle Button")]
         public Brush EnabledBrushColor
         {
@@ -122,12 +124,20 @@ namespace WpfHoverControls
 
         private void OnBtn_Click(object sender, RoutedEventArgs e)
         {
-            Value = true;
+            if (!Value)
+            {
+                Value = true;
+                OnValueChanged?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         private void OffBtn_Click(object sender, RoutedEventArgs e)
         {
-            Value = false;
+            if (Value)
+            {
+                Value = false;
+                OnValueChanged?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         public override void OnApplyTemplate()
