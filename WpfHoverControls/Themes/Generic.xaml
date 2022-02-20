@@ -238,8 +238,8 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <local:HoverButton Background="{TemplateBinding EnabledBrushColor}" BackgroundHover="{TemplateBinding EnabledBrushColorHover}" x:Name="OnBtn" Grid.Column="0" ShowIcon="False" Content="On" CornerRadius="5,0,0,5" BorderThickness="0"/>
-                        <local:HoverButton Background="{TemplateBinding DisabledBrushColor}" BackgroundHover="{TemplateBinding DisabledBrushColorHover}" x:Name="OffBtn" Grid.Column="1" ShowIcon="False" Content="Off" CornerRadius="0,5,5,0" BorderThickness="0"/>
+                        <local:HoverButton Background="{TemplateBinding EnabledBrushColor}" BackgroundHover="{TemplateBinding EnabledBrushColorHover}" x:Name="OnBtn" Grid.Column="0" ShowIcon="False" Content="{TemplateBinding LeftButtonText}" CornerRadius="5,0,0,5" BorderThickness="0"/>
+                        <local:HoverButton Background="{TemplateBinding DisabledBrushColor}" BackgroundHover="{TemplateBinding DisabledBrushColorHover}" x:Name="OffBtn" Grid.Column="1" ShowIcon="False" Content="{TemplateBinding RightButtonText}" CornerRadius="0,5,5,0" BorderThickness="0"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Value" Value="True">

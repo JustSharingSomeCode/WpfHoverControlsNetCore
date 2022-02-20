@@ -122,6 +122,33 @@ namespace WpfHoverControls
         public static readonly DependencyProperty ValueProperty =
             DependencyProperty.Register("Value", typeof(bool), typeof(HoverToggleButton), new PropertyMetadata(true));
 
+
+        [Category("Hover Toggle Button")]
+        public string LeftButtonText
+        {
+            get { return (string)GetValue(LeftButtonTextProperty); }
+            set { SetValue(LeftButtonTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for LeftButtonText.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LeftButtonTextProperty =
+            DependencyProperty.Register("LeftButtonText", typeof(string), typeof(HoverToggleButton), new PropertyMetadata("On"));
+
+        [Category("Hover Toggle Button")]
+        public string RightButtonText
+        {
+            get { return (string)GetValue(RightButtonTextProperty); }
+            set { SetValue(RightButtonTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for RightButtonText.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty RightButtonTextProperty =
+            DependencyProperty.Register("RightButtonText", typeof(string), typeof(HoverToggleButton), new PropertyMetadata("Off"));
+
+
+
+
+
         private void OnBtn_Click(object sender, RoutedEventArgs e)
         {
             if (!Value)
