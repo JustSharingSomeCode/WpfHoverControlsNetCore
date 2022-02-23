@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="FloatToStringConverter.cs" />
     <Compile Include="HoverButton.cs" />
+    <Compile Include="HoverComboBox.cs" />
     <Compile Include="HoverFloatAdder.cs" />
     <Compile Include="HoverScrollBar.cs" />
     <Compile Include="HoverScrollViewer.cs" />

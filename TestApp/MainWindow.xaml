@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApp"
-        xmlns:WpfHoverControls="clr-namespace:WpfHoverControls;assembly=WpfHoverControls" x:Class="TestApp.MainWindow"
+        xmlns:WpfHoverControls="clr-namespace:WpfHoverControls;assembly=WpfHoverControls" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="TestApp.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -20,6 +20,11 @@
         <WpfHoverControls:HoverFloatAdder x:Name="FloatAdder" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Height="30" Width="397" Value="50" OnValueChanged="HoverFloatAdder_OnValueChanged" Increase="0.5"/>
         <Label x:Name="ValueChangedLbl" Content="Label" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top"/>
         <WpfHoverControls:HoverToggleButton Margin="443,182,244,203" EnabledBrushColor="#FF008BFF" DisabledBrushColor="#FF494949" DisabledBrushColorHover="#FF3C3C3C" FontFamily="Bahnschrift Light" EnabledBrushColorHover="#FF00B9FF"/>
+        <WpfHoverControls:HoverComboBox Margin="488,49,77,334">
+            <System:String>asdasd</System:String>
+            <System:String>asdasd</System:String>
+            <System:String>asdasd</System:String>
+        </WpfHoverControls:HoverComboBox>
 
     </Grid>
 </Window>
