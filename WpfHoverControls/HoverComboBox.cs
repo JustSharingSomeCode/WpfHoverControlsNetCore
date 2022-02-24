@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,7 +53,7 @@ namespace WpfHoverControls
         }
 
 
-
+        [Category("Hover ComboBox")]
         public new Brush Background
         {
             get { return (Brush)GetValue(BackgroundProperty); }
@@ -63,7 +64,7 @@ namespace WpfHoverControls
         public new static readonly DependencyProperty BackgroundProperty =
             DependencyProperty.Register("Background", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
 
-
+        [Category("Hover ComboBox")]
         public CornerRadius CornerRadius
         {
             get { return (CornerRadius)GetValue(CornerRadiusProperty); }
@@ -74,7 +75,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(HoverComboBox), new PropertyMetadata(new CornerRadius(5)));
 
-
+        [Category("Hover ComboBox")]
         public new Brush Foreground
         {
             get { return (Brush)GetValue(ForegroundProperty); }
@@ -85,7 +86,7 @@ namespace WpfHoverControls
         public new static readonly DependencyProperty ForegroundProperty =
             DependencyProperty.Register("Foreground", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.White)));
 
-
+        [Category("Hover ComboBox")]
         public Brush ItemForegroundHover
         {
             get { return (Brush)GetValue(ItemForegroundHoverProperty); }
@@ -96,7 +97,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty ItemForegroundHoverProperty =
             DependencyProperty.Register("ItemForegroundHover", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.White)));
 
-
+        [Category("Hover ComboBox")]
         public Brush ItemBackgroundHover
         {
             get { return (Brush)GetValue(ItemBackgroundHoverProperty); }
