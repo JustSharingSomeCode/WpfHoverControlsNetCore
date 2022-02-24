@@ -50,5 +50,64 @@ namespace WpfHoverControls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HoverComboBox), new FrameworkPropertyMetadata(typeof(HoverComboBox)));
         }
+
+
+
+        public new Brush Background
+        {
+            get { return (Brush)GetValue(BackgroundProperty); }
+            set { SetValue(BackgroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Background.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty BackgroundProperty =
+            DependencyProperty.Register("Background", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.Black)));
+
+
+        public CornerRadius CornerRadius
+        {
+            get { return (CornerRadius)GetValue(CornerRadiusProperty); }
+            set { SetValue(CornerRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CornerRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CornerRadiusProperty =
+            DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(HoverComboBox), new PropertyMetadata(new CornerRadius(5)));
+
+
+        public new Brush Foreground
+        {
+            get { return (Brush)GetValue(ForegroundProperty); }
+            set { SetValue(ForegroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Foreground.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty ForegroundProperty =
+            DependencyProperty.Register("Foreground", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.White)));
+
+
+        public Brush ItemForegroundHover
+        {
+            get { return (Brush)GetValue(ItemForegroundHoverProperty); }
+            set { SetValue(ItemForegroundHoverProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ItemForegroundHover.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ItemForegroundHoverProperty =
+            DependencyProperty.Register("ItemForegroundHover", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.White)));
+
+
+        public Brush ItemBackgroundHover
+        {
+            get { return (Brush)GetValue(ItemBackgroundHoverProperty); }
+            set { SetValue(ItemBackgroundHoverProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ItemBackgroundHover.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ItemBackgroundHoverProperty =
+            DependencyProperty.Register("ItemBackgroundHover", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.DarkGray)));
+
+
+
     }
 }
