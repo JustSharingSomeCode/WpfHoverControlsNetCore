@@ -20,7 +20,7 @@
         <WpfHoverControls:HoverFloatAdder x:Name="FloatAdder" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Height="30" Width="397" Value="50" OnValueChanged="HoverFloatAdder_OnValueChanged" Increase="0.5"/>
         <Label x:Name="ValueChangedLbl" Content="Label" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top"/>
         <WpfHoverControls:HoverToggleButton Margin="443,182,244,203" EnabledBrushColor="#FF008BFF" DisabledBrushColor="#FF494949" DisabledBrushColorHover="#FF3C3C3C" FontFamily="Bahnschrift Light" EnabledBrushColorHover="#FF00B9FF"/>
-        <WpfHoverControls:HoverComboBox Margin="482,290,83,93" Foreground="White" Background="#FF00C5FF" ItemBackgroundHover="#FF0097FF" ItemForegroundHover="White" CornerRadius="20">
+        <WpfHoverControls:HoverComboBox Margin="482,290,83,93" Foreground="White" Background="#FF00C5FF" ItemBackgroundHover="#FF0097FF" ItemForegroundHover="White" CornerRadius="20" BorderBrush="#FF0097FF">
             <System:String>Opcion1</System:String>
             <System:String>Opcion2</System:String>
             <System:String>Opcion3</System:String>

@@ -108,6 +108,41 @@ namespace WpfHoverControls
         public static readonly DependencyProperty ItemBackgroundHoverProperty =
             DependencyProperty.Register("ItemBackgroundHover", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.DarkGray)));
 
+        [Category("Hover ComboBox")]
+        public new Brush BorderBrush
+        {
+            get { return (Brush)GetValue(BorderBrushProperty); }
+            set { SetValue(BorderBrushProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for BorderBrush.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty BorderBrushProperty =
+            DependencyProperty.Register("BorderBrush", typeof(Brush), typeof(HoverComboBox), new PropertyMetadata(new SolidColorBrush(Colors.DarkGray)));
+
+        [Category("Hover ComboBox")]
+        public new FontFamily FontFamily
+        {
+            get { return (FontFamily)GetValue(FontFamilyProperty); }
+            set { SetValue(FontFamilyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for FontFamily.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty FontFamilyProperty =
+            DependencyProperty.Register("FontFamily", typeof(FontFamily), typeof(HoverComboBox), new PropertyMetadata(new FontFamily("Segoe UI")));
+
+        [Category("Hover ComboBox")]
+        public new double FontSize
+        {
+            get { return (double)GetValue(FontSizeProperty); }
+            set { SetValue(FontSizeProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for FontSize.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty FontSizeProperty =
+            DependencyProperty.Register("FontSize", typeof(double), typeof(HoverComboBox), new PropertyMetadata((double)12));
+
+
+
 
 
     }
