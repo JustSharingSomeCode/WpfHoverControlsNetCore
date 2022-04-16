@@ -25,6 +25,12 @@
             <System:String>Opcion2</System:String>
             <System:String>Opcion3</System:String>
         </WpfHoverControls:HoverComboBox>
+        <WpfHoverControls:HoverExpander HorizontalAlignment="Left" Margin="95,331,0,0" VerticalAlignment="Top" Width="286" IsExpanded="False">
+            <Grid Height="Auto">
+                <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+        </WpfHoverControls:HoverExpander>
 
     </Grid>
 </Window>
