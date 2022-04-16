@@ -428,8 +428,8 @@
                         <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5" Grid.RowSpan="2"/>
 
                         <Grid x:Name="HeaderGrid" Grid.Row="0">
-                            <Label Content="Categoria"/>
-                            <local:HoverButton x:Name="ExpanderBtn" ShowIcon="False" TextFont="Segoe MDL2 Assets" Content="&#xE099;" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" Width="25" Height="25" CornerRadius="25"/>
+                            <Label Content="Categoria" VerticalAlignment="Stretch" VerticalContentAlignment="Center"/>
+                            <local:HoverButton x:Name="ExpanderBtn" ShowIcon="False" TextFont="Segoe MDL2 Assets" Content="&#xE099;" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,5,5" Width="25" Height="25" CornerRadius="25"/>
                         </Grid>
 
                         <Grid x:Name="ContentGrid" Grid.Row="1" Height="0">
