@@ -51,6 +51,10 @@ namespace WpfHoverControls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HoverExpander), new FrameworkPropertyMetadata(typeof(HoverExpander)));
         }
 
+        public event RoutedEventHandler Btn1_Click;
+        public event RoutedEventHandler Btn2_Click;
+        public event RoutedEventHandler Btn3_Click;
+
         public enum ButtonQuantity
         {
             None,
@@ -240,9 +244,32 @@ namespace WpfHoverControls
         public override void OnApplyTemplate()
         {
             HoverButton btn = GetTemplateChild("ExpanderBtn") as HoverButton;
+            HoverButton btn1 = GetTemplateChild("Btn1") as HoverButton;
+            HoverButton btn2 = GetTemplateChild("Btn2") as HoverButton;
+            HoverButton btn3 = GetTemplateChild("Btn3") as HoverButton;
+
             btn.Click += ExpanderBtn_Click;
 
+            btn1.Click += Btn1_Click1;
+            btn2.Click += Btn2_Click1;
+            btn3.Click += Btn3_Click1;
+
             base.OnApplyTemplate();
+        }
+
+        private void Btn3_Click1(object sender, RoutedEventArgs e)
+        {
+            Btn3_Click?.Invoke(sender, e);
+        }
+
+        private void Btn2_Click1(object sender, RoutedEventArgs e)
+        {
+            Btn2_Click?.Invoke(sender, e);
+        }
+
+        private void Btn1_Click1(object sender, RoutedEventArgs e)
+        {
+            Btn1_Click?.Invoke(sender, e);
         }
 
         private void ExpanderBtn_Click(object sender, RoutedEventArgs e)
