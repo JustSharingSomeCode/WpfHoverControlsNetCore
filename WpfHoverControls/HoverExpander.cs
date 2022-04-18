@@ -51,7 +51,13 @@ namespace WpfHoverControls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HoverExpander), new FrameworkPropertyMetadata(typeof(HoverExpander)));
         }
 
-
+        public enum ButtonQuantity
+        {
+            None,
+            One,
+            Two,
+            Three
+        }
 
         public bool IsExpanded
         {
@@ -62,6 +68,174 @@ namespace WpfHoverControls
         // Using a DependencyProperty as the backing store for IsExpanded.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IsExpandedProperty =
             DependencyProperty.Register("IsExpanded", typeof(bool), typeof(HoverExpander), new PropertyMetadata(false));
+
+        #region MultiButtons
+
+        public ButtonQuantity ButtonsToDisplay
+        {
+            get { return (ButtonQuantity)GetValue(ButtonsToDisplayProperty); }
+            set { SetValue(ButtonsToDisplayProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ButtonsToDisplay.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsToDisplayProperty =
+            DependencyProperty.Register("ButtonsToDisplay", typeof(ButtonQuantity), typeof(HoverExpander), new PropertyMetadata(ButtonQuantity.None));
+
+
+
+        public string Btn1Icon
+        {
+            get { return (string)GetValue(Btn1IconProperty); }
+            set { SetValue(Btn1IconProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Btn1Icon.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty Btn1IconProperty =
+            DependencyProperty.Register("Btn1Icon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE104"));
+
+
+
+        public string Btn2Icon
+        {
+            get { return (string)GetValue(Btn2IconProperty); }
+            set { SetValue(Btn2IconProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Btn2Icon.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty Btn2IconProperty =
+            DependencyProperty.Register("Btn2Icon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE71E"));
+
+
+
+        public string Btn3Icon
+        {
+            get { return (string)GetValue(Btn3IconProperty); }
+            set { SetValue(Btn3IconProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Btn3Icon.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty Btn3IconProperty =
+            DependencyProperty.Register("Btn3Icon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE107"));
+
+
+
+        public Brush ButtonsBackground
+        {
+            get { return (Brush)GetValue(ButtonsBackgroundProperty); }
+            set { SetValue(ButtonsBackgroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ButtonsBackground.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsBackgroundProperty =
+            DependencyProperty.Register("ButtonsBackground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(45, 90, 125))));
+
+
+
+        public Brush ButtonsBackgroundHover
+        {
+            get { return (Brush)GetValue(ButtonsBackgroundHoverProperty); }
+            set { SetValue(ButtonsBackgroundHoverProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ButtonsBackgroundHover.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsBackgroundHoverProperty =
+            DependencyProperty.Register("ButtonsBackgroundHover", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(70, 150, 200))));
+
+
+
+        public double ButtonsSize
+        {
+            get { return (double)GetValue(ButtonsSizeProperty); }
+            set { SetValue(ButtonsSizeProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ButtonsSize.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsSizeProperty =
+            DependencyProperty.Register("ButtonsSize", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)30));
+
+
+
+        public double ButtonsIconSize
+        {
+            get { return (double)GetValue(ButtonsIconSizeProperty); }
+            set { SetValue(ButtonsIconSizeProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ButtonsIconSize.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsIconSizeProperty =
+            DependencyProperty.Register("ButtonsIconSize", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)15));
+
+
+
+        public double ButtonsRightMargin
+        {
+            get { return (double)GetValue(ButtonsRightMarginProperty); }
+            set { SetValue(ButtonsRightMarginProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ButtonsSize.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsRightMarginProperty =
+            DependencyProperty.Register("ButtonsRightMargin", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)25));
+
+
+
+        #endregion
+
+        #region Expander
+
+
+        
+        public string UpIcon
+        {
+            get { return (string)GetValue(UpIconProperty); }
+            set { SetValue(UpIconProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for UpIcon.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty UpIconProperty =
+            DependencyProperty.Register("UpIcon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE96D"));
+
+
+
+        public string DownIcon
+        {
+            get { return (string)GetValue(DownIconProperty); }
+            set { SetValue(DownIconProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DownIcon.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DownIconProperty =
+            DependencyProperty.Register("DownIcon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE96E"));
+        
+
+
+        #endregion
+
+
+
+        public new Brush Background
+        {
+            get { return (Brush)GetValue(BackgroundProperty); }
+            set { SetValue(BackgroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Background.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty BackgroundProperty =
+            DependencyProperty.Register("Background", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(45, 90, 125))));
+
+
+
+        public new Brush Foreground
+        {
+            get { return (Brush)GetValue(ForegroundProperty); }
+            set { SetValue(ForegroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Foreground.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty ForegroundProperty =
+            DependencyProperty.Register("Foreground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.White)));
+
+
 
         public override void OnApplyTemplate()
         {

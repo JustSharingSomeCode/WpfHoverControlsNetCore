@@ -54,6 +54,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoubleToRightMarginConverter.cs" />
     <Compile Include="FloatToStringConverter.cs" />
     <Compile Include="HoverButton.cs" />
     <Compile Include="HoverComboBox.cs" />

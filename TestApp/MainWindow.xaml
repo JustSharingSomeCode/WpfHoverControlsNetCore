@@ -27,7 +27,7 @@
         </WpfHoverControls:HoverComboBox>
         <WpfHoverControls:HoverScrollViewer HorizontalAlignment="Left" Height="100" Margin="443,232,0,0" VerticalAlignment="Top" Width="286">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
-                <WpfHoverControls:HoverExpander HorizontalAlignment="Stretch" VerticalAlignment="Top" IsExpanded="False">
+                <WpfHoverControls:HoverExpander HorizontalAlignment="Stretch" VerticalAlignment="Top" IsExpanded="False" ButtonsToDisplay="Three">
                     <Grid Height="Auto">
                         <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
                         <Button Content="Button" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="75"/>
@@ -41,6 +41,7 @@
                 </WpfHoverControls:HoverExpander>
             </StackPanel>
         </WpfHoverControls:HoverScrollViewer>
+        <WpfHoverControls:HoverExpander Content="HoverExpander" HorizontalAlignment="Left" Margin="424,66,0,0" VerticalAlignment="Top" Height="50" Width="305"/>
 
     </Grid>
 </Window>
