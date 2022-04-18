@@ -5,6 +5,7 @@
 
     <local:FloatToStringConverter x:Key="FloatToString"/>
     <local:DoubleToRightMarginConverter x:Key="DoubleToRightMargin"/>
+    <local:DoubleToLeftMarginConverter x:Key="DoubleToLeftMargin"/>
 
     <Style TargetType="{x:Type local:HoverButton}">
         <Setter Property="Template">
@@ -432,8 +433,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                
-                                <Label Grid.Column="0" Foreground="{TemplateBinding Foreground}" Content="Categoria" VerticalAlignment="Stretch" VerticalContentAlignment="Center"/>
+
+                                <Label Grid.Column="0" Foreground="{TemplateBinding Foreground}" Margin="{TemplateBinding ButtonsRightMargin, Converter={StaticResource DoubleToLeftMargin}}" Content="Categoria" VerticalAlignment="Stretch" VerticalContentAlignment="Center"/>
                                 <Grid Grid.Column="1" Margin="{TemplateBinding ButtonsRightMargin, Converter={StaticResource DoubleToRightMargin}}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition x:Name="clm1" Width="Auto"/>
