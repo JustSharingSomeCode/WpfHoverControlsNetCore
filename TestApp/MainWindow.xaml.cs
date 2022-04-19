@@ -29,5 +29,20 @@ namespace TestApp
         {
             ValueChangedLbl.Content = FloatAdder.Value;
         }
+
+        private void HoverExpander_Btn1_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Edit Btn");
+        }
+
+        private void HoverExpander_Btn2_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Search Btn");
+        }
+
+        private void HoverExpander_Btn3_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Delete Btn");
+        }
     }
 }
