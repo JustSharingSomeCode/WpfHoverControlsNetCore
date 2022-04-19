@@ -427,7 +427,7 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <Border Grid.Row="0" Background="{TemplateBinding Background}" CornerRadius="5">
+                        <Border x:Name="HeaderBorder" Grid.Row="0" Background="{TemplateBinding Background}" CornerRadius="5">
                             <Grid x:Name="HeaderGrid" VerticalAlignment="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -461,6 +461,8 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsExpanded" Value="True">
                             <Setter TargetName="ContentGrid" Property="Height" Value="Auto"/>
+                            <Setter TargetName="HeaderBorder" Property="CornerRadius" Value="5,5,0,0"/>
+                            <Setter TargetName="ContentBorder" Property="CornerRadius" Value="0,0,5,5"/>
                             <Setter TargetName="ContentBorder" Property="Visibility" Value="Visible"/>
                             <Setter TargetName="ExpanderBtn" Property="Content" Value="{Binding Path=UpIcon, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
                         </Trigger>
