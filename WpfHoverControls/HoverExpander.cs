@@ -183,12 +183,36 @@ namespace WpfHoverControls
 
 
 
+        public Brush ButtonsIconForeground
+        {
+            get { return (Brush)GetValue(ButtonsIconForegroundProperty); }
+            set { SetValue(ButtonsIconForegroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ButtonsIconForeground.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsIconForegroundProperty =
+            DependencyProperty.Register("ButtonsIconForeground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.White)));
+
+
+        public Brush ButtonsIconForegroundHover
+        {
+            get { return (Brush)GetValue(ButtonsIconForegroundHoverProperty); }
+            set { SetValue(ButtonsIconForegroundHoverProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ButtonsIconForegroundHover.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsIconForegroundHoverProperty =
+            DependencyProperty.Register("ButtonsIconForegroundHover", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.White)));
+
+
+
+
         #endregion
 
         #region Expander
 
 
-        
+
         public string UpIcon
         {
             get { return (string)GetValue(UpIconProperty); }
@@ -285,7 +309,6 @@ namespace WpfHoverControls
             DependencyProperty.Register("ShowExpandIcon", typeof(bool), typeof(HoverExpander), new PropertyMetadata(true));
 
 
-
         public new FontFamily FontFamily
         {
             get { return (FontFamily)GetValue(FontFamilyProperty); }
@@ -297,7 +320,6 @@ namespace WpfHoverControls
             DependencyProperty.Register("FontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe UI")));
 
 
-
         public new double FontSize
         {
             get { return (double)GetValue(FontSizeProperty); }
@@ -307,7 +329,6 @@ namespace WpfHoverControls
         // Using a DependencyProperty as the backing store for FontSize.  This enables animation, styling, binding, etc...
         public new static readonly DependencyProperty FontSizeProperty =
             DependencyProperty.Register("FontSize", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)12));
-
 
 
 
