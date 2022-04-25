@@ -286,6 +286,30 @@ namespace WpfHoverControls
 
 
 
+        public new FontFamily FontFamily
+        {
+            get { return (FontFamily)GetValue(FontFamilyProperty); }
+            set { SetValue(FontFamilyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for FontFamily.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty FontFamilyProperty =
+            DependencyProperty.Register("FontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe UI")));
+
+
+
+        public new double FontSize
+        {
+            get { return (double)GetValue(FontSizeProperty); }
+            set { SetValue(FontSizeProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for FontSize.  This enables animation, styling, binding, etc...
+        public new static readonly DependencyProperty FontSizeProperty =
+            DependencyProperty.Register("FontSize", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)12));
+
+
+
 
         public override void OnApplyTemplate()
         {
