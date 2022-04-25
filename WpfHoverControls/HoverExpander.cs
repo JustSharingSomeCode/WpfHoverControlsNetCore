@@ -240,6 +240,52 @@ namespace WpfHoverControls
             DependencyProperty.Register("Foreground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.White)));
 
 
+        public CornerRadius LeftButtonCornerRadius
+        {
+            get { return (CornerRadius)GetValue(LeftButtonCornerRadiusProperty); }
+            set { SetValue(LeftButtonCornerRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for LeftButtonCornerRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LeftButtonCornerRadiusProperty =
+            DependencyProperty.Register("LeftButtonCornerRadius", typeof(CornerRadius), typeof(HoverExpander), new PropertyMetadata(new CornerRadius(5, 0, 0, 5)));
+
+
+        public CornerRadius RightButtonCornerRadius
+        {
+            get { return (CornerRadius)GetValue(RightButtonCornerRadiusProperty); }
+            set { SetValue(RightButtonCornerRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for RightButtonCornerRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty RightButtonCornerRadiusProperty =
+            DependencyProperty.Register("RightButtonCornerRadius", typeof(CornerRadius), typeof(HoverExpander), new PropertyMetadata(new CornerRadius(0, 5, 5, 0)));
+
+
+        public CornerRadius SingleButtonCornerRadius
+        {
+            get { return (CornerRadius)GetValue(SingleButtonCornerRadiusProperty); }
+            set { SetValue(SingleButtonCornerRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for SingleButtonCornerRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SingleButtonCornerRadiusProperty =
+            DependencyProperty.Register("SingleButtonCornerRadius", typeof(CornerRadius), typeof(HoverExpander), new PropertyMetadata(new CornerRadius(5)));
+
+
+
+        public bool ShowExpandIcon
+        {
+            get { return (bool)GetValue(ShowExpandIconProperty); }
+            set { SetValue(ShowExpandIconProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ShowExpandIcon.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ShowExpandIconProperty =
+            DependencyProperty.Register("ShowExpandIcon", typeof(bool), typeof(HoverExpander), new PropertyMetadata(true));
+
+
+
 
         public override void OnApplyTemplate()
         {

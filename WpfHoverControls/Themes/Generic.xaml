@@ -6,6 +6,7 @@
     <local:FloatToStringConverter x:Key="FloatToString"/>
     <local:DoubleToRightMarginConverter x:Key="DoubleToRightMargin"/>
     <local:DoubleToLeftMarginConverter x:Key="DoubleToLeftMargin"/>
+    <local:DoubleToLeftCornerRadiusConverter x:Key="DoubleToLeftCornerRadius"/>
 
     <Style TargetType="{x:Type local:HoverButton}">
         <Setter Property="Template">
@@ -470,7 +471,7 @@
                             <Setter TargetName="Btn1" Property="Visibility" Value="Hidden"/>
                             <Setter TargetName="Btn2" Property="Visibility" Value="Hidden"/>
                             <Setter TargetName="Btn3" Property="Visibility" Value="Hidden"/>
-                            <Setter TargetName="ExpanderBtn" Property="CornerRadius" Value="5"/>
+                            <Setter TargetName="ExpanderBtn" Property="CornerRadius" Value="{Binding Path=SingleButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
                         </Trigger>
                         <Trigger Property="ButtonsToDisplay" Value="One">
                             <Setter TargetName="Btn1" Property="Visibility" Value="Visible"/>
@@ -478,27 +479,60 @@
                             <Setter TargetName="clm2" Property="Width" Value="0"/>
                             <Setter TargetName="Btn3" Property="Visibility" Value="Hidden"/>
                             <Setter TargetName="clm3" Property="Width" Value="0"/>
-                            <Setter TargetName="Btn1" Property="CornerRadius" Value="5,0,0,5"/>
-                            <Setter TargetName="ExpanderBtn" Property="CornerRadius" Value="0,5,5,0"/>
+                            <Setter TargetName="Btn1" Property="CornerRadius" Value="{Binding Path=LeftButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
+                            <Setter TargetName="ExpanderBtn" Property="CornerRadius" Value="{Binding Path=RightButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
                         </Trigger>
                         <Trigger Property="ButtonsToDisplay" Value="Two">
                             <Setter TargetName="Btn1" Property="Visibility" Value="Visible"/>
                             <Setter TargetName="Btn2" Property="Visibility" Value="Visible"/>
                             <Setter TargetName="Btn3" Property="Visibility" Value="Hidden"/>
                             <Setter TargetName="clm3" Property="Width" Value="0"/>
-                            <Setter TargetName="Btn1" Property="CornerRadius" Value="5,0,0,5"/>
+                            <Setter TargetName="Btn1" Property="CornerRadius" Value="{Binding Path=LeftButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
                             <Setter TargetName="Btn2" Property="CornerRadius" Value="0"/>
-                            <Setter TargetName="ExpanderBtn" Property="CornerRadius" Value="0,5,5,0"/>
+                            <Setter TargetName="ExpanderBtn" Property="CornerRadius" Value="{Binding Path=RightButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
                         </Trigger>
                         <Trigger Property="ButtonsToDisplay" Value="Three">
                             <Setter TargetName="Btn1" Property="Visibility" Value="Visible"/>
                             <Setter TargetName="Btn2" Property="Visibility" Value="Visible"/>
                             <Setter TargetName="Btn3" Property="Visibility" Value="Visible"/>
-                            <Setter TargetName="Btn1" Property="CornerRadius" Value="5,0,0,5"/>
+                            <Setter TargetName="Btn1" Property="CornerRadius" Value="{Binding Path=LeftButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
                             <Setter TargetName="Btn2" Property="CornerRadius" Value="0"/>
                             <Setter TargetName="Btn3" Property="CornerRadius" Value="0"/>
-                            <Setter TargetName="ExpanderBtn" Property="CornerRadius" Value="0,5,5,0"/>
+                            <Setter TargetName="ExpanderBtn" Property="CornerRadius" Value="{Binding Path=RightButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
                         </Trigger>
+                        <Trigger Property="ShowExpandIcon" Value="False">
+                            <Setter TargetName="ExpanderBtn" Property="Visibility" Value="Hidden"/>
+                            <Setter TargetName="ExpanderBtn" Property="Width" Value="0"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="ShowExpandIcon" Value="False"/>
+                                <Condition Property="ButtonsToDisplay" Value="One"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="Btn1" Property="CornerRadius" Value="{Binding Path=SingleButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="ShowExpandIcon" Value="False"/>
+                                <Condition Property="ButtonsToDisplay" Value="Two"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="Btn1" Property="CornerRadius" Value="{Binding Path=LeftButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
+                                <Setter TargetName="Btn2" Property="CornerRadius" Value="{Binding Path=RightButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="ShowExpandIcon" Value="False"/>
+                                <Condition Property="ButtonsToDisplay" Value="Three"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="Btn1" Property="CornerRadius" Value="{Binding Path=LeftButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
+                                <Setter TargetName="Btn3" Property="CornerRadius" Value="{Binding Path=RightButtonCornerRadius, RelativeSource={RelativeSource AncestorType={x:Type local:HoverExpander}}}"/>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
