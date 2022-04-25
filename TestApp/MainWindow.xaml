@@ -41,7 +41,7 @@
                 </WpfHoverControls:HoverExpander>
             </StackPanel>
         </WpfHoverControls:HoverScrollViewer>
-        <WpfHoverControls:HoverExpander Content="HoverExpander" HorizontalAlignment="Left" Margin="424,66,0,0" VerticalAlignment="Top" Height="64" Width="305" ButtonsToDisplay="Three" Btn1_Click="HoverExpander_Btn1_Click" Btn2_Click="HoverExpander_Btn2_Click" Btn3_Click="HoverExpander_Btn3_Click"/>
+        <WpfHoverControls:HoverExpander Content="HoverExpander" HorizontalAlignment="Left" Margin="424,66,0,0" VerticalAlignment="Top" Height="64" Width="305" ButtonsToDisplay="Two" Btn1_Click="HoverExpander_Btn1_Click" Btn2_Click="HoverExpander_Btn2_Click" Btn3_Click="HoverExpander_Btn3_Click" ShowExpandIcon="False"/>
 
     </Grid>
 </Window>
