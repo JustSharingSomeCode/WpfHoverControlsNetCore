@@ -234,7 +234,31 @@ namespace WpfHoverControls
         // Using a DependencyProperty as the backing store for DownIcon.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DownIconProperty =
             DependencyProperty.Register("DownIcon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE96E"));
-        
+
+
+
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TitleProperty =
+            DependencyProperty.Register("Title", typeof(string), typeof(HoverExpander), new PropertyMetadata("Expander"));
+
+
+
+        public double MinExpanderHeight
+        {
+            get { return (double)GetValue(MinExpanderHeightProperty); }
+            set { SetValue(MinExpanderHeightProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MinExpanderHeight.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MinExpanderHeightProperty =
+            DependencyProperty.Register("MinExpanderHeight", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)40));
+
 
 
         #endregion
@@ -250,6 +274,18 @@ namespace WpfHoverControls
         // Using a DependencyProperty as the backing store for Background.  This enables animation, styling, binding, etc...
         public new static readonly DependencyProperty BackgroundProperty =
             DependencyProperty.Register("Background", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(45, 90, 125))));
+
+
+
+        public Brush ContentBackground
+        {
+            get { return (Brush)GetValue(ContentBackgroundProperty); }
+            set { SetValue(ContentBackgroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ContentBackground.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ContentBackgroundProperty =
+            DependencyProperty.Register("ContentBackground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.LightGray)));
 
 
 
@@ -329,6 +365,30 @@ namespace WpfHoverControls
         // Using a DependencyProperty as the backing store for FontSize.  This enables animation, styling, binding, etc...
         public new static readonly DependencyProperty FontSizeProperty =
             DependencyProperty.Register("FontSize", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)12));
+
+
+
+        public CornerRadius CustomCornerRadius
+        {
+            get { return (CornerRadius)GetValue(CustomCornerRadiusProperty); }
+            set { SetValue(CustomCornerRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CustomCornerRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CustomCornerRadiusProperty =
+            DependencyProperty.Register("CustomCornerRadius", typeof(CornerRadius), typeof(HoverExpander), new PropertyMetadata(new CornerRadius(5)));
+
+
+
+        public bool UseCustomCornerRadius
+        {
+            get { return (bool)GetValue(UseCustomCornerRadiusProperty); }
+            set { SetValue(UseCustomCornerRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for UseCustomCornerRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty UseCustomCornerRadiusProperty =
+            DependencyProperty.Register("UseCustomCornerRadius", typeof(bool), typeof(HoverExpander), new PropertyMetadata(false));
 
 
 
