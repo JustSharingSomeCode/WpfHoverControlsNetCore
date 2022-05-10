@@ -208,15 +208,40 @@ namespace WpfHoverControls
             DependencyProperty.Register("ButtonsIconForegroundHover", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.White)));
 
         [Category("Hover Expander")]
-        public FontFamily ButtonsFontFamily
+        public FontFamily Btn1FontFamily
         {
-            get { return (FontFamily)GetValue(ButtonsFontFamilyProperty); }
-            set { SetValue(ButtonsFontFamilyProperty, value); }
+            get { return (FontFamily)GetValue(Btn1FontFamilyProperty); }
+            set { SetValue(Btn1FontFamilyProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for ButtonsFontFamily.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ButtonsFontFamilyProperty =
-            DependencyProperty.Register("ButtonsFontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe MDL2 Assets")));
+        public static readonly DependencyProperty Btn1FontFamilyProperty =
+            DependencyProperty.Register("Btn1FontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe MDL2 Assets")));
+
+
+        [Category("Hover Expander")]
+        public FontFamily Btn2FontFamily
+        {
+            get { return (FontFamily)GetValue(Btn2FontFamilyProperty); }
+            set { SetValue(Btn2FontFamilyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Btn2FontFamily.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty Btn2FontFamilyProperty =
+            DependencyProperty.Register("Btn2FontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe MDL2 Assets")));
+
+
+        [Category("Hover Expander")]
+        public FontFamily Btn3FontFamily
+        {
+            get { return (FontFamily)GetValue(Btn3FontFamilyProperty); }
+            set { SetValue(Btn3FontFamilyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Btn3FontFamily.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty Btn3FontFamilyProperty =
+            DependencyProperty.Register("Btn3FontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe MDL2 Assets")));
+
 
         #endregion
 
@@ -273,6 +298,20 @@ namespace WpfHoverControls
 
 
         #endregion
+
+
+
+        public FontFamily ExpanderBtnFontFamily
+        {
+            get { return (FontFamily)GetValue(ExpanderBtnFontFamilyProperty); }
+            set { SetValue(ExpanderBtnFontFamilyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ExpanderBtnFontFamily.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ExpanderBtnFontFamilyProperty =
+            DependencyProperty.Register("ExpanderBtnFontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe MDL2 Assets")));
+
+
 
 
         [Category("Hover Expander")]
