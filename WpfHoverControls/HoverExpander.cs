@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,6 +64,7 @@ namespace WpfHoverControls
             Three
         }
 
+        [Category("Hover Expander")]
         public bool IsExpanded
         {
             get { return (bool)GetValue(IsExpandedProperty); }
@@ -75,6 +77,7 @@ namespace WpfHoverControls
 
         #region MultiButtons
 
+        [Category("Hover Expander")]
         public ButtonQuantity ButtonsToDisplay
         {
             get { return (ButtonQuantity)GetValue(ButtonsToDisplayProperty); }
@@ -86,7 +89,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("ButtonsToDisplay", typeof(ButtonQuantity), typeof(HoverExpander), new PropertyMetadata(ButtonQuantity.None));
 
 
-
+        [Category("Hover Expander")]
         public string Btn1Icon
         {
             get { return (string)GetValue(Btn1IconProperty); }
@@ -98,7 +101,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("Btn1Icon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE104"));
 
 
-
+        [Category("Hover Expander")]
         public string Btn2Icon
         {
             get { return (string)GetValue(Btn2IconProperty); }
@@ -110,7 +113,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("Btn2Icon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE71E"));
 
 
-
+        [Category("Hover Expander")]
         public string Btn3Icon
         {
             get { return (string)GetValue(Btn3IconProperty); }
@@ -122,7 +125,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("Btn3Icon", typeof(string), typeof(HoverExpander), new PropertyMetadata("\uE107"));
 
 
-
+        [Category("Hover Expander")]
         public Brush ButtonsBackground
         {
             get { return (Brush)GetValue(ButtonsBackgroundProperty); }
@@ -134,7 +137,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("ButtonsBackground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(45, 90, 125))));
 
 
-
+        [Category("Hover Expander")]
         public Brush ButtonsBackgroundHover
         {
             get { return (Brush)GetValue(ButtonsBackgroundHoverProperty); }
@@ -146,7 +149,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("ButtonsBackgroundHover", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(70, 150, 200))));
 
 
-
+        [Category("Hover Expander")]
         public double ButtonsSize
         {
             get { return (double)GetValue(ButtonsSizeProperty); }
@@ -158,7 +161,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("ButtonsSize", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)30));
 
 
-
+        [Category("Hover Expander")]
         public double ButtonsIconSize
         {
             get { return (double)GetValue(ButtonsIconSizeProperty); }
@@ -170,7 +173,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("ButtonsIconSize", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)15));
 
 
-
+        [Category("Hover Expander")]
         public double ButtonsRightMargin
         {
             get { return (double)GetValue(ButtonsRightMarginProperty); }
@@ -182,7 +185,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("ButtonsRightMargin", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)25));
 
 
-
+        [Category("Hover Expander")]
         public Brush ButtonsIconForeground
         {
             get { return (Brush)GetValue(ButtonsIconForegroundProperty); }
@@ -193,7 +196,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty ButtonsIconForegroundProperty =
             DependencyProperty.Register("ButtonsIconForeground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.White)));
 
-
+        [Category("Hover Expander")]
         public Brush ButtonsIconForegroundHover
         {
             get { return (Brush)GetValue(ButtonsIconForegroundHoverProperty); }
@@ -204,8 +207,16 @@ namespace WpfHoverControls
         public static readonly DependencyProperty ButtonsIconForegroundHoverProperty =
             DependencyProperty.Register("ButtonsIconForegroundHover", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.White)));
 
+        [Category("Hover Expander")]
+        public FontFamily ButtonsFontFamily
+        {
+            get { return (FontFamily)GetValue(ButtonsFontFamilyProperty); }
+            set { SetValue(ButtonsFontFamilyProperty, value); }
+        }
 
-
+        // Using a DependencyProperty as the backing store for ButtonsFontFamily.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ButtonsFontFamilyProperty =
+            DependencyProperty.Register("ButtonsFontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe MDL2 Assets")));
 
         #endregion
 
@@ -264,7 +275,7 @@ namespace WpfHoverControls
         #endregion
 
 
-
+        [Category("Hover Expander")]
         public new Brush Background
         {
             get { return (Brush)GetValue(BackgroundProperty); }
@@ -276,7 +287,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("Background", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(45, 90, 125))));
 
 
-
+        [Category("Hover Expander")]
         public Brush ContentBackground
         {
             get { return (Brush)GetValue(ContentBackgroundProperty); }
@@ -288,7 +299,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("ContentBackground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.LightGray)));
 
 
-
+        [Category("Hover Expander")]
         public new Brush Foreground
         {
             get { return (Brush)GetValue(ForegroundProperty); }
@@ -299,7 +310,7 @@ namespace WpfHoverControls
         public new static readonly DependencyProperty ForegroundProperty =
             DependencyProperty.Register("Foreground", typeof(Brush), typeof(HoverExpander), new PropertyMetadata(new SolidColorBrush(Colors.White)));
 
-
+        [Category("Hover Expander")]
         public CornerRadius LeftButtonCornerRadius
         {
             get { return (CornerRadius)GetValue(LeftButtonCornerRadiusProperty); }
@@ -310,7 +321,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty LeftButtonCornerRadiusProperty =
             DependencyProperty.Register("LeftButtonCornerRadius", typeof(CornerRadius), typeof(HoverExpander), new PropertyMetadata(new CornerRadius(5, 0, 0, 5)));
 
-
+        [Category("Hover Expander")]
         public CornerRadius RightButtonCornerRadius
         {
             get { return (CornerRadius)GetValue(RightButtonCornerRadiusProperty); }
@@ -321,7 +332,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty RightButtonCornerRadiusProperty =
             DependencyProperty.Register("RightButtonCornerRadius", typeof(CornerRadius), typeof(HoverExpander), new PropertyMetadata(new CornerRadius(0, 5, 5, 0)));
 
-
+        [Category("Hover Expander")]
         public CornerRadius SingleButtonCornerRadius
         {
             get { return (CornerRadius)GetValue(SingleButtonCornerRadiusProperty); }
@@ -333,7 +344,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("SingleButtonCornerRadius", typeof(CornerRadius), typeof(HoverExpander), new PropertyMetadata(new CornerRadius(5)));
 
 
-
+        [Category("Hover Expander")]
         public bool ShowExpandIcon
         {
             get { return (bool)GetValue(ShowExpandIconProperty); }
@@ -344,7 +355,7 @@ namespace WpfHoverControls
         public static readonly DependencyProperty ShowExpandIconProperty =
             DependencyProperty.Register("ShowExpandIcon", typeof(bool), typeof(HoverExpander), new PropertyMetadata(true));
 
-
+        [Category("Hover Expander")]
         public new FontFamily FontFamily
         {
             get { return (FontFamily)GetValue(FontFamilyProperty); }
@@ -355,7 +366,7 @@ namespace WpfHoverControls
         public new static readonly DependencyProperty FontFamilyProperty =
             DependencyProperty.Register("FontFamily", typeof(FontFamily), typeof(HoverExpander), new PropertyMetadata(new FontFamily("Segoe UI")));
 
-
+        [Category("Hover Expander")]
         public new double FontSize
         {
             get { return (double)GetValue(FontSizeProperty); }
@@ -366,8 +377,7 @@ namespace WpfHoverControls
         public new static readonly DependencyProperty FontSizeProperty =
             DependencyProperty.Register("FontSize", typeof(double), typeof(HoverExpander), new PropertyMetadata((double)12));
 
-
-
+        [Category("Hover Expander")]
         public CornerRadius CustomCornerRadius
         {
             get { return (CornerRadius)GetValue(CustomCornerRadiusProperty); }
@@ -379,7 +389,7 @@ namespace WpfHoverControls
             DependencyProperty.Register("CustomCornerRadius", typeof(CornerRadius), typeof(HoverExpander), new PropertyMetadata(new CornerRadius(5)));
 
 
-
+        [Category("Hover Expander")]
         public bool UseCustomCornerRadius
         {
             get { return (bool)GetValue(UseCustomCornerRadiusProperty); }
